@@ -17,3 +17,4 @@ int main(){
     cout<<sizeof(p5)<<endl;
     return 0;
 }
+// Her pointer size does not depend upon the data types all have same size
