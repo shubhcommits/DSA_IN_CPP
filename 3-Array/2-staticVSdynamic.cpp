@@ -13,7 +13,7 @@ int main(){
     p=new int[5];  // this is to get memory from heap
     A[0]=5;  // accessing from stack
     p[0]=8;  // accessing from heap
-    // pointer points on first element but with that we can access all the elements
+    // pointer points on first element but with that we can access all the elements+
     p[1]=6;
     p[2]=9;
     p[3]=5;
