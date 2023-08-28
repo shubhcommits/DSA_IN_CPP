@@ -5,7 +5,7 @@ using namespace std;
 int main(){
     //int n;
     //cin>>n;
-    //int A[n];  // here size of variable is declared at run time created in stack
+    //int A[n];  // here size of variable is declared at (run time) created in stack
     // for accessing anything from heap we must have a pointer
     // here assigning variable in heap
     int A[5]{1,5,9,6,4};
