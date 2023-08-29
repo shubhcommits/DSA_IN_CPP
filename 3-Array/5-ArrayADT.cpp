@@ -6,7 +6,7 @@ class Array{
     int size;
     int length;
 };
-void display(Array arr){
+void display(Array arr){  // this will   print all the alements of the array
     cout<<"elements are :"<<endl;
     for(int i=0;i<arr.length;i++){
         cout<<arr.A[i]<<endl;
