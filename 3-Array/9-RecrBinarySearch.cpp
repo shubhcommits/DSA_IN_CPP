@@ -8,6 +8,7 @@ class Array{
     int length;
 };
 int RBinarySearch(int a[],int l,int h,int key){
+    // here we also pass array with l,h,key
     int mid;
     if(l<=h){
         mid=(l+h)/2;
