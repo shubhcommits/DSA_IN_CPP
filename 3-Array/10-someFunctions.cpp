@@ -7,6 +7,12 @@ class Array{
     int size;
     int length;
 };
+// Append function
+// void Append(Array *arr,int x)  // this is a function used to add element to the array if the space available
+// {
+//  if(arr->length<arr->size)
+//  arr->A[arr->length++]=x;
+// }
 // Get function
 int Get(Array arr,int index){
     if(index>=0 && index<arr.length){

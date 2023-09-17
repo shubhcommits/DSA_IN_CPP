@@ -57,29 +57,29 @@ int main() {
 }
    /*------------------------------------------------------------------------------------------------*/
    // This is initial method done
-    #include<iostream>
-    using namespace std;
-    int main(){
-        int A[]={1,2,3,4,5};
-        int B[]={5,6,7,8,9};
-        int k=0;
-        int *U;
-        U=new int[9];
-        for(int i=0;i<5;i++){
-            U[k++]=A[i];
-        }
-        for(int i=0;i<5;i++){
-            for(int j=0;j<k;j++){
-                if(B[i]==U[j]){
-                    break;
-                }
-                else if(j==k-1&&B[i]!=U[j]){
-                    U[k++]=B[i];
-                }
-            }
-        }
-        for(int i=0;i<9;i++){
-            cout<<U[i]<<" ";
-        }
-        return 0;
-    }
+    // #include<iostream>
+    // using namespace std;
+    // int main(){
+    //     int A[]={1,2,3,4,5};
+    //     int B[]={5,6,7,8,9};
+    //     int k=0;
+    //     int *U;
+    //     U=new int[9];
+    //     for(int i=0;i<5;i++){
+    //         U[k++]=A[i];
+    //     }
+    //     for(int i=0;i<5;i++){
+    //         for(int j=0;j<k;j++){
+    //             if(B[i]==U[j]){
+    //                 break;
+    //             }
+    //             else if(j==k-1&&B[i]!=U[j]){
+    //                 U[k++]=B[i];
+    //             }
+    //         }
+    //     }
+    //     for(int i=0;i<9;i++){
+    //         cout<<U[i]<<" ";
+    //     }
+    //     return 0;
+    // }

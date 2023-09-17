@@ -15,7 +15,7 @@ int BinarySearch(Array arr,int key){
         if(arr.A[mid]==key){
             return mid;
         }
-        else if(key>mid){
+        else if(key>arr.A[mid]){
             l=mid+1;
         }
         else{
