@@ -32,14 +32,15 @@ int Max(Node *p){
     return mx;
 }
 /*-----------------------recursive method----------------------------*/
-int Max(Node *p){
-    int x;
-    if(p==0){
-        return INT32_MIN;
-    }
-    x=Max(p->next);
-    return x>p->data?x:p->data;
-}
+//////////////////////////////////////
+// int Max(Node *p){
+//     int x;
+//     if(p==0){
+//         return INT32_MIN;
+//     }
+//     x=Max(p->next);
+//     return x>p->data?x:p->data;
+// }
 int main(){
     int A[]={2,3,5,3,6,4};
     create(A,6);
