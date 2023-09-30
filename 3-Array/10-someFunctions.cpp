@@ -2,6 +2,109 @@
 #include<iostream>
 using namespace std;
 class Array{
+    private:
+    int *A;
+    int size;
+    int length;
+    public:
+    Array(int size){
+        this->size=size;
+        length=0;
+        A=new int[size];
+    }
+    ~Array(){
+        delete []A;
+    }
+    void InsertElements(int n);  // here n is no of elements entered
+    int Get(int index);
+    int Set(int index,int x);
+    int Max();
+    int Min();
+    int Sum();
+    int Average();
+
+};
+void Array::InsertElements(int n){
+    for(int i=0;i<n;i++){
+        cin>>A[i];
+    }
+    length=n;
+}
+int Array::Get(int index){
+    if(index>=0&&index<length){
+        return A[index];
+    }
+    else{
+        return -1;
+    }
+}
+int Array::Set(int index,int x){
+    if(index>=0&&index<length){
+        A[index]=x;
+        return A[index];
+    }
+    else{
+        return -1;
+    }
+}
+int Array::Max(){
+    int temp=A[0];
+    for(int i=1;i<length;i++){
+        if(temp<A[i]){
+            temp=A[i];
+        }
+    }
+    return temp;
+}
+int Array::Min(){
+    int temp=A[0];
+    for(int i=1;i<length;i++){
+        if(temp>A[i]){
+            temp=A[i];
+        }
+    }
+    return temp;
+}
+int Array::Sum(){
+    int sum=0;
+    for(int i=0;i<length;i++){
+        sum=sum+A[i];
+    }
+    return sum;
+}
+int Array::Average(){
+    int sum=0;
+    for(int i=0;i<length;i++){
+        sum=sum+A[i];
+    }
+    return sum/length;
+}
+int main(){
+    int size;
+    cout<<"Enter size of the array"<<endl;
+    cin>>size;
+    Array arr(size);
+    int n;
+    cout<<"Enter number of elemnts to enter"<<endl;
+    cin>>n;
+    arr.InsertElements(n);
+    int index;
+    cout<<"Enter the index which you element you want"<<endl;
+    cin>>index;
+    cout<<arr.Get(index)<<endl;
+    cout<<arr.Set(index,5)<<endl;
+    cout<<arr.Max()<<endl;
+    cout<<arr.Min()<<endl;
+    cout<<arr.Sum();
+    return 0;
+}
+
+/*---------------------------------------*/
+/*
+// This contain Get(),Set(),Max(),Min(),Sum(),Avg()
+#include<iostream>
+using namespace std;
+class Array{
     public:
     int A[10];
     int size;
@@ -80,3 +183,4 @@ int main(){
     cout<<Sum(arr);  // above array is modified by set function
     return 0;
 }
+*/

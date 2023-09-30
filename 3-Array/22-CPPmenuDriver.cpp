@@ -32,9 +32,9 @@ class Array{
     bool checkSorted();
     void NegOnOneSide();
     Array* merge(Array arr2);
-    // void merge();
-    // void Union();
-    // void intersection();
+    Array* Union(Array arr2);
+    bool isDuplicate(int key,int k);
+    Array* Intersection(Array arr2);
     // void difference();
 };
 // Display
@@ -203,6 +203,46 @@ Array* Array::merge(Array arr2){  // This will return an array
     arr3->length=length+arr2.length;
  return arr3;
 }
+// check duplicate
+    bool Array::isDuplicate(int key,int k){
+        for(int i=0;i<k;i++){
+            if(A[i]==key){
+                return true;
+            }
+        }
+        return false;
+    }
+// Union
+    Array* Array::Union(Array arr2){
+        int k=0;
+        Array *arr3 = new Array(length+arr2.length);
+        for(int i=0;i<length;i++){
+            if(!isDuplicate(A[i],k)){
+                arr3->A[k++]=A[i];
+            }
+        }
+        for(int j=0;j<arr2.length;j++){
+            if(!isDuplicate(arr2.A[j],k)){
+                arr3->A[k++]=arr2.A[j];
+            }
+        }
+        arr3->length=k;
+        return arr3;
+    }
+// Intersection
+Array* Array::Intersection(Array arr2){
+    int k=0;
+    Array *arr3=new Array(length<arr2.length?length:arr2.length);
+    for(int i=0;i<length;i++){
+        for(int j=0;j<arr2.length;j++){
+            if(A[i]==arr2.A[j]){
+                arr3->A[k++]=A[i];
+            }
+        }
+    }
+    arr3->length=k;
+    return arr3;
+}
 int main(){
 
     int ch;
@@ -231,7 +271,9 @@ int main(){
     cout<<"10. Insert in Array 2"<<endl;
     cout<<"11. Merge"<<endl;
     cout<<"12. Sum"<<endl;
-    cout<<"13. Display"<<endl;
+    cout<<"13. Union"<<endl;
+    cout<<"14. Intersection"<<endl;
+    cout<<"15. Display"<<endl;
     cout<<"Enter your choice :";
     cin>>ch;
     switch(ch){
@@ -289,11 +331,22 @@ int main(){
         cout<<"Sum is "<<arr.Sum();
         break;        
         case 13:
-        arr.Display();
+        arr3=arr.Union(arr2);
+        cout<<"Union of both array"<<endl;
+        arr3->Display();
+        delete arr3;
+        break;     
+        case 14:
+        arr3=arr.Intersection(arr2);
+        cout<<"Intersection of both array"<<endl;
+        arr3->Display();
+        delete arr3;
         break;        
+        case 15:
+        arr.Display();
+        break;           
 
     }
     }while(ch<14);
-    //delete[] arr.A;
     return 0;
 }

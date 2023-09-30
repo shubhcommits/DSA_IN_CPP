@@ -1,4 +1,63 @@
-// Binary search using recursion
+// Binary Search using Recursion
+#include<iostream>
+using namespace std;
+class Array{
+    private:
+    int *A;
+    int size;
+    public:
+    int length;
+    Array(int size){
+        this->size=size;
+        length=0;
+        A=new int[size];
+    }
+    void InsertElements(int n);
+    int RBinarySearch(int l,int h,int key);
+};
+void Array::InsertElements(int n){
+    if(length+n<=size){
+    for(int i=0;i<n;i++){
+        cin>>A[i];
+    }
+        length=n;
+    }
+}
+int Array::RBinarySearch(int l,int h,int key){
+    int mid;
+    while(l<=h){
+        mid=(l+h)/2;
+        if(A[mid]==key){
+            return mid;
+        }
+        else if(key>A[mid]){
+            return RBinarySearch(mid+1,h,key);
+        }
+        else{
+            return RBinarySearch(l,mid-1,key);
+        }
+    }
+    return -1;
+}
+int main(){
+    int size;
+    cout<<"Enter the size of the array : ";
+    cin>>size;
+    Array arr(size);
+    int n;
+    cout<<"Enter the length of the array"<<endl;
+    cin>>n;
+    arr.InsertElements(n);
+    int key;
+    cout<<"Enter the element you want to find ";
+    cin>>key;
+    int res=arr.RBinarySearch(0,arr.length-1,key);
+    cout<<res;
+}
+
+/*--------------------------------------------------*/
+
+/*
 #include <iostream>
 using namespace std;
 class Array
@@ -35,10 +94,12 @@ int main()
     Array arr = {{1, 2, 3, 4, 5}, 10, 5};
     cout << RBinarySearch(arr.A, 0, arr.length - 1, 5);
 }
+*/
 
-/*********************************************************************/
+/*---------------------------------------------------*/
 
 // Binary search using recursion
+/*
 #include <iostream>
 using namespace std;
 class Array
@@ -75,3 +136,4 @@ int main()
     Array arr = {{1, 2, 3, 4, 5}, 10, 5};
     cout << RBinarySearch(arr, 0, arr.length - 1, 5);
 }
+*/

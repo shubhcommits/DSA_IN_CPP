@@ -1,35 +1,51 @@
-#include <iostream>
+//This contains entering elements in the array and displaying it
+#include<iostream>
 using namespace std;
-class Array
-{
-public:
+class Array{
+    private:
     int *A;
     int size;
     int length;
+    public:
+    /*
+    Array(int sz){
+        size=sz;
+        length=0;
+    }  */
+    // If parameter is taken with same name to whom we are assigning then we use this pointer
+    Array(int size){
+        this->size=size;
+        length=0;
+        A=new int[size];
+    }
+    ~Array(){
+        delete []A;
+    }
+    void Display();
+    void InsertElements(int n);
 };
-void display(Array arr)
-{ // this will   print all the alements of the array
-    cout << "elements are :" << endl;
-    for (int i = 0; i < arr.length; i++)
-    {
-        cout << arr.A[i] << endl;
+void Array::InsertElements(int n){
+    if(length+n<=size){
+    for(int i=0;i<n;i++){
+        cin>>A[i];
+        length=n;
+    }
     }
 }
-int main()
-{
-    Array arr;
-    cout << "Enter the size of the array :" << endl;
-    cin >> arr.size;
-    arr.A = new int[arr.size]; // this is to initialise memory in heap
-    // arr.length = 0;
-    int n;
-    cout << "Enter the number of elements in array :" << endl;
-    cin >> n;
-    cout << "Enter the elements in the array :" << endl;
-    for (int i = 0; i < n; i++)
-    {
-        cin >> arr.A[i];
+void Array::Display(){
+    cout<<"Elements are :"<<endl;
+    for(int i=0;i<length;i++){
+        cout<<A[i]<<endl;
     }
-    arr.length = n;
-    display(arr);
+}
+int main(){
+    int sz;
+    cout<<"Enter the size of the array "<<endl;
+    cin>>sz;
+    Array arr(sz);
+    int n;
+    cout<<"Enter the number of elements in array"<<endl;
+    cin>>n;
+    arr.InsertElements(n);
+    arr.Display();
 }

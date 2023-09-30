@@ -22,7 +22,7 @@ class Array{
     void Delete(int index);
 };
 void Array::InsertElements(int n){
-    if(n<=size){
+    if(length+n<=size){
     for(int i=0;i<n;i++){
         cin>>A[i];
         length=n;

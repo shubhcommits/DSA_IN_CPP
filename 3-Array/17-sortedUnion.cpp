@@ -60,7 +60,7 @@ Array *SortedUnion(Array *arr1, Array *arr2)
 int main()
 {
     Array arr1{{1, 5, 8, 15, 16}, 10, 5};
-    Array arr2{{16, 17, 18}, 10, 3};
+    Array arr2{{16, 17, 18}, 10, 6};
 
     Array *arr3 = SortedUnion(&arr1, &arr2);
 

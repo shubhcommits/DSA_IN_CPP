@@ -151,7 +151,7 @@ class Array{
                 arr3->A[k++]=A[i++];
             }
             else{
-                arr3[k++]=arr2.A[j++];
+                arr3->A[k++]=arr2.A[j++];
             }
         }
         while(i<length){
