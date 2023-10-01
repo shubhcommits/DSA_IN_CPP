@@ -35,7 +35,7 @@ class Array{
     Array* Union(Array arr2);
     bool isDuplicate(int key,int k);
     Array* Intersection(Array arr2);
-    // void difference();
+    Array* Difference(Array arr2);
 };
 // Display
 void Array::Display(){
@@ -243,8 +243,29 @@ Array* Array::Intersection(Array arr2){
     arr3->length=k;
     return arr3;
 }
-int main(){
+// Difference of two arrays
+Array* Array::Difference(Array arr2) {
+    int k = 0;
+    Array* arr3 = new Array(length);
 
+    for (int i = 0; i < length; i++) {
+        bool found = false;
+
+        for (int j = 0; j < arr2.length; j++) {
+            if (A[i] == arr2.A[j]) {
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            arr3->A[k++] = A[i];
+        }
+    }
+    arr3->length = k;
+    return arr3;
+}
+int main(){
     int ch;
     int x;
     int index;
@@ -273,7 +294,8 @@ int main(){
     cout<<"12. Sum"<<endl;
     cout<<"13. Union"<<endl;
     cout<<"14. Intersection"<<endl;
-    cout<<"15. Display"<<endl;
+    cout<<"15. Difference"<<endl;
+    cout<<"16. Display"<<endl;
     cout<<"Enter your choice :";
     cin>>ch;
     switch(ch){
@@ -341,12 +363,17 @@ int main(){
         cout<<"Intersection of both array"<<endl;
         arr3->Display();
         delete arr3;
-        break;        
+        break;
         case 15:
+        arr3=arr.Difference(arr2);
+        cout<<"Difference of both array"<<endl;
+        arr3->Display();
+        delete arr3;
+        break;         
+        case 16:
         arr.Display();
         break;           
-
     }
-    }while(ch<14);
+    }while(ch<16);
     return 0;
 }
