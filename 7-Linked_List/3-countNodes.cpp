@@ -7,7 +7,6 @@ class Node{
     Node *next;
 }*first=NULL; //global pointer
 void create(int A[],int n){
-    int i;
     Node *t,*last;
     first = new Node;
     first->data=A[0];

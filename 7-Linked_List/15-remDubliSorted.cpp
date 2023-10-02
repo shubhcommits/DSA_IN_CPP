@@ -1,4 +1,4 @@
-// Removing dublicate fromthe sorted array
+// Removing dublicate from the sorted array
 #include<iostream>
 using namespace std;
 class Node{

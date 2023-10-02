@@ -13,7 +13,7 @@ void create(int A[],int n){
     first->data=A[0];
     first->next=NULL;
     last=first;
-    for(int i=1;i<n;i++){
+    for(i=1;i<n;i++){
         t=new Node;
         t->data=A[i];
         t->next=NULL;

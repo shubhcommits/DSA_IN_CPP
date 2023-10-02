@@ -8,7 +8,6 @@ class Node{
     Node *next;  // Here next is the pointer pointing to the next node
 }*first=NULL; //global pointer
 void create(int A[],int n){
-    int i;
     Node *t,*last;
     // first = (struct Node*)malloc(sizeof(struct Node));  / In C
     first = new Node;  // this will create a node in heap
