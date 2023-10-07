@@ -11,7 +11,7 @@ class LinkedList{
     public:
     LinkedList(){
         first=NULL;
-    }
+    }   
     LinkedList(int A[],int n);
     void Display();
 };

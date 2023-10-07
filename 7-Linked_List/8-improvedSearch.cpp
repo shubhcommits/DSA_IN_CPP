@@ -23,6 +23,9 @@ void create(int A[],int n){
 }
 Node* IMsearch(Node *p,int key){
     Node *q=NULL;
+    if(p->data==key){  // This will handle when element found at first position
+        return p;
+    }
     while(p!=NULL){
         if(p->data==key){
             q->next=p->next;
@@ -46,7 +49,7 @@ int main(){
     Node *temp;
     int A[]={2,3,5,3,6,4};
     create(A,6);
-    temp=IMsearch(first,5);
+    temp=IMsearch(first,2);
     if(temp){
         cout<<"Key is found : "<<temp->data<<endl;
     }

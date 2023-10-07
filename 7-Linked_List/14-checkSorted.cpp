@@ -20,7 +20,8 @@ void create(int A[],int n){
     }
 }
 int checkSorted(Node *p){
-    int x = -32768;
+    // int x = -32768;
+    int x=INT32_MIN;
     while(p!=NULL){
         if(x>p->data){
             return false;
@@ -32,6 +33,6 @@ int checkSorted(Node *p){
 }
 int main(){
     int A[]={1,3,4,6,7,9,11};
-    create(A,5);
+    create(A,7);
     cout<<checkSorted(first);
 }
