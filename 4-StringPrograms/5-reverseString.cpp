@@ -19,8 +19,8 @@ using namespace std;
 int main(){
     char name[]="Welcome";
     int i,j,temp;
-    for(j=0;name[j]!='\0';j++){}
-    j=j-1;
+    for(j=0;name[j]!='\0';j++){}  // this loop to get length of the string
+    j=j-1;  // this will address to last link
     for(i=0;i<j;i++,j--){
         temp=name[i];
         name[i]=name[j];

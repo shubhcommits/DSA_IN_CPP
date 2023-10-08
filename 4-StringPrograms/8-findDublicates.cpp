@@ -16,3 +16,4 @@ int main(){
     cout<<k;
     return 0;
 }
+//Time complexity O(n)
