@@ -13,7 +13,7 @@ int main(){
         else if(A[i]>max){
             max=A[i];
         }
-    }
+    }   
     cout<<"Minimum "<<min<<endl;
     cout<<"Maximum "<<max<<endl;
 }

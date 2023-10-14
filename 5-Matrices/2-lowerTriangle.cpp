@@ -9,6 +9,9 @@ class Lowtri{
         // A=new int[n];
         A=new int[n*(n+1)/2];
     }
+    ~Lowtri(){
+        delete []A;
+    }
     void Set(int i,int j,int x);
     void Display();
 };

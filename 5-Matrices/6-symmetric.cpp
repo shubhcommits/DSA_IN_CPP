@@ -19,15 +19,11 @@ class Symmetric{
     }
     void Symmetric::Display(){
         for(int i=1;i<=n;i++){
-            for(int j=0;j<=n;j++){
+            for(int j=1;j<=n;j++){
                 if(i<=j){
                 cout<<A[i*(i-1)/2+j-1]<<" ";
                 }
                 else{
-                    int k;
-                    k=i;
-                    i=j;
-                    j=k;
                     cout<<A[j*(j-1)/2+i-1]<<" ";
                 }
             }

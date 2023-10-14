@@ -8,7 +8,7 @@ int main(){
     //int A[n];  // here size of variable is declared at (run time) created in stack
     // for accessing anything from heap we must have a pointer
     // here assigning variable in heap
-    int A[5]{1,5,9,6,4};
+    int A[5]={1,5,9,6,4};
     int *p;
     p=new int[5];  // this is to get memory from heap
     A[0]=5;  // accessing from stack
